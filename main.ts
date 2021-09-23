@@ -1,6 +1,18 @@
+let Nr = 0
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index <= 30; index++) {
-        DrawNumber(randint(1, 7))
+        Nr = randint(1, 7)
+        basic.clearScreen()
+        DrawNumber(Nr)
+        basic.pause(index * 12)
+        if (index == 30) {
+            for (let index2 = 0; index2 < 4; index2++) {
+                basic.pause(300)
+                basic.clearScreen()
+                basic.pause(300)
+                DrawNumber(Nr)
+            }
+        }
     }
 })
 function DrawNumber (szám: number) {
